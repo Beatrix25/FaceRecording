@@ -1,0 +1,57 @@
+{
+  "name": "reactbuttonexample",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.12.2",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.21.1",
+    "babel": "^6.23.0",
+    "bootstrap": "^4.3.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "firebase": "^8.8.0",
+    "firebase-admin": "^9.11.0",
+    "multiselect-react-dropdown": "^2.0.7",
+    "mysql": "^2.18.1",
+    "react": "^16.9.0",
+    "react-bootstrap": "^1.0.0-beta.11",
+    "react-dom": "^16.9.0",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "^0.9.5",
+    "react-select": "^5.2.1",
+    "react-spring": "^8.0.27"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "backend": "node server/index.js",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/helper-regex": "^7.10.5",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
+    "babel-loader": "^6.2.10"
+  }
+}

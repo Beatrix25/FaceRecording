@@ -1,0 +1,97 @@
+
+   
+      
+body {
+    font-family: 'Roboto';
+    padding: 0;
+    margin: 0;
+   
+
+    background: linear-gradient( #4181b6 0, #4181b6 25%, #21537c 50%, #0b2d49 75%, #0e385a 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-top: 100px;
+    margin-left: 20px;
+    color: #ecf0f1;
+    height: 100%;
+  }
+
+  .aboutTeacher {
+   
+    transition: 0.3s;
+  
+    background-color: rgba(8, 15, 17, 0.5);
+     color: white;
+     width: 95%;
+     margin-left:2%;
+    margin-bottom: 50%;
+     
+   
+  }
+
+  .aboutImage{
+    width: 100%;
+   padding: 20px;
+ 
+    
+  }
+
+.container .aboutTeacher .aboutImage .image{
+    background-color: rgba(8, 15, 17,0.01);
+    border-color: ivory 2px;
+    
+  }
+ .peopleData .name{
+    font-size: 23px;
+  }
+  
+.peopleData {
+   margin-left: 20%;
+   margin-top: -10.5%;
+   padding: 10px;
+    background-color: rgba(8, 15, 17,0.01);
+  }
+  
+ .container{
+   height: 100%;
+   margin-top: -7%;
+ }
+  
+
+ 
+
+
+  .App {
+    font-family: sans-serif;
+    text-align: left;
+    width: 60%;
+    margin-top: 5%;
+    margin-left: 25%;
+  
+  
+  }
+
+
+
+.select{
+ padding: 5%;
+  margin-bottom: 30%;
+  margin-left: 10%;
+  width: 80%;
+  background-color: rgba(9, 29, 34, 0.01);
+  color: #0b2d49;
+  
+}
+
+.button{
+  padding: 5%;
+  text-align: center;
+
+ 
+  
+}
+
+
+
+
+

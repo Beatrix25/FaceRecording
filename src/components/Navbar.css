@@ -1,0 +1,39 @@
+
+ .nav .image .image{ 
+    width: 40%;
+    margin-top: -150%;
+    margin-left: 25%;
+ 
+    
+}
+.navbar{
+    
+height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  
+
+}
+
+ .nav a {
+    padding: 6px 6px 6px 10%;
+    text-align: center;
+    font-size: 23px;
+    color: white;
+    margin-left: 10%;
+  }
+
+  .navbar a:hover {
+    color: #4181b6;
+  }
+  @media screen and (max-height: 450px) {
+    .navbar {padding-top: 15px;}
+    .navbar a {font-size: 18px;}
+  }
+
+ 
