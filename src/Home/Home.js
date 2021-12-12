@@ -57,14 +57,14 @@ function App() {
           style={loginBtnProps}
         
         >
-          Login
+          Bejelentkezés
         </animated.button>
         <animated.button
           onClick={registerClicked}
           id="registerBtn"
           style={registerBtnProps}
         >
-          Register
+         Regisztráció
         </animated.button>
       </div>
       <div className="form-group">
@@ -76,7 +76,7 @@ function App() {
         </animated.form>
       </div>
       <animated.div className="forgot-panel" style={loginProps}>
-        <a herf="#">Forgot your password</a>
+        <a href="#">Elfelejtette a jelszavát?</a>
       </animated.div>
     </div>
   );
@@ -125,18 +125,18 @@ const [loginStatus,setLoginStatus] = useState("");
     
     <React.Fragment>
      
-      <label for="username">USERNAME</label>
+      <label for="username">Felhasználónév</label>
       <input type="text" id="username" 
       onChange={(e)=>{
           setUsername(e.target.value);
         }}/>
-      <label for="password">PASSWORD</label>
+      <label for="password">Jelszó</label>
       <input type="text" id="password"
       onChange={(e)=>{
         setPassword(e.target.value);
       }} />
     
-  <input type="submit" value="submit" className="submit"  onClick={clickHandle } />
+  <input type="submit" value="Belépés" className="submit"  onClick={clickHandle } />
     </React.Fragment>
   );
 }
@@ -161,19 +161,19 @@ const [loginStatus,setLoginStatus] = useState("");
   return (
    
     <React.Fragment>
-      <label for="fullname">full name</label>
+      <label for="fullname">Felhasználónév</label>
       <input type="text" id="fullname"  
       onChange={(e)=>{
           setUsernameReg(e.target.value);
         }}/>
-      <label for="password">password</label>
+      <label for="password">jelszó</label>
       <input type="text" id="password"
       onChange={(e)=>{
         setPasswordReg(e.target.value);
       }} />
-      <label for="confirmpassword">confirm password</label>
+      <label for="confirmpassword">jelszó megerősítése</label>
       <input type="text" id="confirmpassword" />
-      <input type="submit" value="submit" class="submit" onClick={register} />
+      <input type="submit" value="Regisztráció" class="submit" onClick={register} />
     </React.Fragment>
    
   );

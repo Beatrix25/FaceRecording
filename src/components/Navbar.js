@@ -24,8 +24,8 @@ const Navigation = (props) => {
                 <Nav className='nav'>
                 <div className="image" ><img src={loginImg} className='image'  /> </div>
                     <a href="/">Kezdőlap</a>
-                    <a href="/Contact">Tantárgyak</a>
-                   
+                    <a href="/About">Számlálás indítása</a>
+                    <a href="/Contact">Jelenlét</a>
                     </Nav>
                <Nav>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-
+import * as serviceWorker from './Product/serviceWorker';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -14,3 +14,4 @@ ReactDOM.render(
     document.getElementById('root')
     );
 
+    serviceWorker.unregister();

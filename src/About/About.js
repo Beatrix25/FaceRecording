@@ -82,9 +82,7 @@ class About extends Component {
         value={this.state.optionSelected}
       />
       </div>
-      <div class="button">
-      <Button type="submit" onClick={() => history.push('/')}>Számlálás inítása</Button>
-        </div>
+      
         </div>
       
 

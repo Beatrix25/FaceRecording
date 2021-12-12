@@ -1,7 +1,7 @@
 
  .nav .image .image{ 
     width: 40%;
-    margin-top: -150%;
+    margin-top: -90%;
     margin-left: 25%;
  
     
@@ -9,7 +9,7 @@
 .navbar{
     
 height: 100%;
-  width: 200px;
+  width: 300px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -21,11 +21,11 @@ height: 100%;
 }
 
  .nav a {
-    padding: 6px 6px 6px 10%;
+    padding: 6px  6px 10%;
     text-align: center;
     font-size: 23px;
     color: white;
-    margin-left: 10%;
+    margin-left: 5%;
   }
 
   .navbar a:hover {

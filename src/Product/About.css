@@ -13,18 +13,23 @@ body {
     margin-top: 100px;
     margin-left: 20px;
     color: #ecf0f1;
-    height: 100%;
+    height: 50%;
   }
 
   .aboutTeacher {
    
     transition: 0.3s;
   
-    background-color: rgba(8, 15, 17, 0.5);
+    background-color: rgba(8, 15, 17, 0.4);
      color: white;
-     width: 50%;
-     margin-left:2%;
+     width: 120%;
+     height: 10%;
     margin-bottom: 50%;
+    margin-left: -10%;
+    border-right: #ecf0f1 1px solid;
+    border-left: #ecf0f1 1px solid;
+    border-top: #ecf0f1 1px solid;
+ 
      
    
   }
@@ -32,9 +37,14 @@ body {
   .aboutImage{
     width: 100%;
    padding: 20px;
+   padding-bottom: 40px;
+   border: #0b2d49;
+   
  
     
   }
+
+ 
 
 .container .aboutTeacher .aboutImage .image{
     background-color: rgba(8, 15, 17,0.01);
@@ -46,27 +56,26 @@ body {
   }
   
 .peopleData {
-   margin-left: 20%;
-   margin-top: -10.5%;
+   margin-left: 10%;
+   margin-top: -10%;
    padding: 10px;
-    background-color: rgba(8, 15, 17,0.01);
+    background-color: rgba(8, 15, 17,0.001);
   }
   
  .container{
-   height: 100%;
-   margin-top: -7%;
+   height: 50%;
+   margin-top: -12%;
+  
+  
  }
   
-
- 
-
-
   .App {
     font-family: sans-serif;
     text-align: left;
-    width: 70%;
+    width: 60%;
     margin-top: 5%;
-    margin-left: 25%;
+    margin-left: 27.5%;
+
   
   
   }
@@ -74,22 +83,30 @@ body {
 
 
 .select{
- padding: 5%;
-  margin-bottom: 30%;
-  margin-left: 10%;
-  width: 20%;
+ margin-top: -60%;
+ float: right;
+ margin-right: 5%;
+
+  margin-bottom: 28%;
+  margin-left: 5%;
+  width: 24%;
   background-color: rgba(9, 29, 34, 0.01);
-  color: #0b2d49;
+  color: #091d2e;
   
 }
 
 .button{
-  padding: 5%;
+  margin-top: -25%;
+  padding: 2%;
   text-align: center;
-
+  background-color: #071929;
+border-right: #ecf0f1 0.5px solid;
+border-left: #ecf0f1 0.5px solid;
+border-bottom: #ecf0f1 0.5px solid;
  
   
 }
+
 
 
 
