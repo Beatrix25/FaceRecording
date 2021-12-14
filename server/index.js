@@ -77,7 +77,7 @@ app.get("/subjects", async (req, res) => {
 app.get("/presence", async (req, res) => {
     let asdasd = [];
       try {
-          asdasd =  await db.query("SELECT * FROM `presence` join subject on presence.subject_id = subject.id order by subject_id",
+          asdasd =  await db.query("SELECT * FROM `presence`, subject WHERE presence.subject_id = subject.id",
                (err,result)=>{
                    if(err == "null"){
                    console.log(err);
