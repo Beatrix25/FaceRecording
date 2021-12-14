@@ -2690,4 +2690,5 @@ export const drawMesh = (predictions, ctx) => {
       ctx.fillText(`Faces: ${predictions.length}`, 10, 50);
     });
   }
+  return predictions.length;
 };

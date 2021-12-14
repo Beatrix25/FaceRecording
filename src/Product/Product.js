@@ -24,15 +24,14 @@ import history from './../history';
 import "./About.css";
 import AboutImg from "./me.jpg";
 import { components } from "react-select";
-import ReactDOM, { render } from "react-dom";
 import makeAnimated from "react-select/animated";
-import { colourOptions } from "./data.js";
 import MySelect from "./MySelect.js";
-
+import Axios from 'axios';
 
 import "../../node_modules/react-select/dist/react-select.cjs";
-
-
+var faces = 0;
+var selectedID;
+var dropDownData;
 const Option = (props) => {
   return (
     <div>
@@ -69,9 +68,9 @@ function Product() {
    // });
    // NEW MODEL
    const net = await facemesh.load(facemesh.SupportedPackages.mediapipeFacemesh);
-   setInterval(() => {
+  //  setInterval(() => {
      detect(net);
-   }, 10);
+  //  }, 1000);
  };
 
  const detect = async (net) => {
@@ -103,15 +102,29 @@ function Product() {
      
      const ctx = canvasRef.current.getContext("2d");
      requestAnimationFrame(()=>{drawMesh(face, ctx)});
+     faces = drawMesh(face, ctx);
    }
  };
 
- useEffect(()=>{runFacemesh()}, []);
+ const sendFaces = async () => {
+  runFacemesh();
+  console.log(faces, "Faces")
+  return null;
+};
+
+
+useEffect(async () => {
+  runFacemesh()
+}, []);
  
  return (
   
    <div className="Product">
+        <Button type="submit" onClick={sendFaces}>
+              Send
+            </Button>
      <header className="Product-header">
+    
        <Webcam
          ref={webcamRef}
          style={{
@@ -144,27 +157,56 @@ function Product() {
          
          }}
        />
-
-       
-     
      </header>
+  
 </div>)}
 
 const animatedComponents = makeAnimated();
+var subject = [];
 class About extends Component {
+  
 
   constructor(props) {
     super(props);
     this.state = {
       optionSelected: null,
+      data: null,
     };
+  
   }
 
-  handleChange = (selected) => {
+  componentDidMount() {
+    Axios.get('http://localhost:3001/subjects')
+    .then(response => {
+    const data = response.data.data.result
+    data.map((subjectData) => {
+      subject.push({value: subjectData.identifier, label: subjectData.name, color: "111", id:subjectData.id})
+    })
+    console.log(data, "Subjects")
+    this.setState({ data })
+    }
+    )
+    
+}
+
+  handleChange = async (selected) => {
     this.setState({
       optionSelected: selected,
     });
+    
   };
+
+  sendData2 = (value) =>{
+  console.log(faces, "Faces2", value)
+  const remove =   JSON.stringify(value);
+  const removed = `${remove.slice(remove.length - 3, remove.length - 2)}`;
+
+  Axios.post('http://localhost:3001/addpresence',{
+    num_of_student:faces,
+    subject_id:removed
+  }).then((response)=>{console.log("success")})
+
+  }
 
 render() {
   return ( 
@@ -178,7 +220,7 @@ render() {
 
             <div class="peopleData">
               <p class="name">Szabó Beatrix</p>
-              <p>Informatika</p>
+              <p>Informatika</p>{console.log(subject, "data")}
               <br></br>
             </div>
           </div>
@@ -189,20 +231,24 @@ render() {
         </div>
         <div class="select">
             <MySelect
-              options={colourOptions}
+              options={subject}
               isMulti
               closeMenuOnSelect={false}
               hideSelectedOptions={false}
               components={{ Option, MultiValue, animatedComponents }}
               onChange={this.handleChange}
-              allowSelectAll={true}
-              value={this.state.optionSelected}
+              allowSelectAll={false}
+              value={this.sendData2(this.state.optionSelected)}
+              
             />
           </div></div>
           <div class="button">
-            <Button type="submit" onClick={() => history.push("Contact/Contact.js")}>
+            <Button type="submit" onClick={() => history.push("Contact")}>
               Számlálás indítása
             </Button>
+
+            {/* <Button type="submit" onClick={this.sendData2(this.state.optionSelected)}>
+            </Button> */}
           </div>
 
         </div>

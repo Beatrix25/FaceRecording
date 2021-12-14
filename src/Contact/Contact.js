@@ -1,78 +1,53 @@
-import React, { Component } from 'react';
-import './Contact.css';
-import Linux from "./linux.png";
-import Digitalis from "./digitalis.png";
-import Informatika from "./informatika.png";
-import Programozas from "./programozas.png";
+import React, { useEffect, useContext,createContext, useState, useCallback , Component } from "react";
+import { useHistory } from "react-router-dom";
+import Axios from 'axios';
+var presence =[];
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: null,
+    };
+  }
+  componentDidMount() {
+    Axios.get('http://localhost:3001/presence')
+      .then(response => {
+      const data = response.data.data.result
+      presence = data;
+      this.setState({ data })}
+      )
+  }
 
-class Contact extends Component {
-    render() {
-        return (
-    <div>
-<ul class="cards">
-  <li>
-    <a href="" class="card">
-      <img src={Linux} class="card__image" alt="linux" />
-      <div class="card__overlay">
-        <div class="card__header">
-                              
-          <img class="card__thumb" src="https://toppng.com/uploads/preview/linux-penguin-logo-vector-free-115741999182tcqy7e57y.png" alt="" />
-          <div class="card__header-text">
-            <h3 class="card__title">Linux alapok</h3>            
-            <span class="card__status">Hallgatók száma: 8</span>
-          </div>
-        </div>
-        
-      </div>
-    </a>      
-  </li>
-  <li>
-    <a href="" class="card">
-      <img src={Digitalis} class="card__image" alt="" />
-      <div class="card__overlay">        
-        <div class="card__header">
-                          
-          <img class="card__thumb" src="https://docplayer.hu/docs-images/109/189263724/images/1-0.jpg" alt="" />
-          <div class="card__header-text">
-            <h3 class="card__title">Digitális kultúra</h3>
-            <span class="card__status">Hallgatók száma: 17</span>
-          </div>
-        </div>
-        
-      </div>
-    </a>
-  </li>
-  <li>
-    <a href="" class="card">
-      <img src={Informatika} class="card__image" alt="" />
-      <div class="card__overlay">
-        <div class="card__header">
-                             
-          <img class="card__thumb" src="https://img.halooglasi.com/slike/oglasi/Thumbs/170708/l/informatika-i-programiranje-4025076-71783034286.jpg" alt="" />
-          <div class="card__header-text">
-            <h3 class="card__title">Informatika</h3>
-            
-            <span class="card__status">Hallgatók száma: 32</span>
-          </div>
-        </div>
-       
-      </div>
-    </a>
-  </li>
-  
-  
-            
-       
-    
-</ul>
-
-
-
-            </div>
-
-            
-        );
-    }
+  render (){
+    return(
+    <div className="list-group">
+      <table className="table table-hover table-dark">
+        <thead>
+          <tr className="bg-primary">
+            <th scope="col">Name</th>
+            <th scope="col">Max student</th>
+            <th scope="col">Num of Student</th>
+            <th scope="col">Professor</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {  presence.map((presenceData) => {
+              return (
+                <tr>
+                  <td>{presenceData.name}</td>
+                  <td>{presenceData.num_of_max_student}</td>
+                  <td>{presenceData.num_of_student}</td>
+                  <td>{presenceData.profesor}</td>
+                  <td>{presenceData.date}</td>
+                </tr>
+              );
+            })} 
+        </tbody>
+      </table>
+    </div>
+    )
 }
+};
 
-export default Contact;
+export default App;

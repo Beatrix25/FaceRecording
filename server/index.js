@@ -32,6 +32,72 @@ console.log(username, password)
     );
 });
 
+app.post('/addpresence',(req,res)=>{
+    const num_of_student=req.body.num_of_student
+    const subject_id= req.body.subject_id
+console.log(num_of_student, subject_id, "data")
+   db.query("INSERT INTO presence (num_of_student,subject_id) VALUES (?,?)",
+    [num_of_student,subject_id],
+     (err,result)=>{
+         if(err == "null"){
+         console.log(err);
+        }
+        else{
+    console.log(result)            
+        }
+    }
+    );
+});
+
+app.get("/subjects", async (req, res) => {
+  let asdasd = [];
+    try {
+        asdasd =  await db.query("SELECT * FROM `subject`",
+             (err,result)=>{
+                 if(err == "null"){
+                 console.log(err);
+                }
+                else{
+                    res.status(200).json({
+                        status: "succes",
+                        data: {
+                            result
+                        },
+                      });
+                }
+            }
+            );
+
+    } catch (err) {
+      console.log(err);
+    }
+  });
+//SELECT * FROM `presence`, subject WHERE presence.subject_id = subject.id
+
+app.get("/presence", async (req, res) => {
+    let asdasd = [];
+      try {
+          asdasd =  await db.query("SELECT * FROM `presence` join subject on presence.subject_id = subject.id order by subject_id",
+               (err,result)=>{
+                   if(err == "null"){
+                   console.log(err);
+                  }
+                  else{
+                      console.log(result)
+                      res.status(200).json({
+                          status: "succes",
+                          data: {
+                              result
+                          },
+                        });
+                  }
+              }
+              );
+  
+      } catch (err) {
+        console.log(err);
+      }
+    });
 
 app.post('/login',(req,res)=>{
     const username=req.body.username
