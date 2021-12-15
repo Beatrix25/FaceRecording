@@ -83,11 +83,10 @@ body {
 
 
 .select{
- margin-top: -60%;
+ margin-top: -45%;
  float: right;
  margin-right: 5%;
-
-  margin-bottom: 28%;
+margin-bottom: 28%;
   margin-left: 5%;
   width: 24%;
   background-color: rgba(9, 29, 34, 0.01);
@@ -95,17 +94,10 @@ body {
   
 }
 
-.button{
-  margin-top: -25%;
-  padding: 2%;
-  text-align: center;
-  background-color: #071929;
-border-right: #ecf0f1 0.5px solid;
-border-left: #ecf0f1 0.5px solid;
-border-bottom: #ecf0f1 0.5px solid;
+
  
   
-}
+
 
 
 

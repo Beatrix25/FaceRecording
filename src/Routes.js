@@ -6,7 +6,7 @@ import Tables from "./Tables/Tables";
 
 import Login from "./Login/Login";
 import history from './history';
-import About from "./Product/Product";
+import About from "./FaceCounter/FaceCounter";
 
 export default class Routes extends Component {
     render() {
