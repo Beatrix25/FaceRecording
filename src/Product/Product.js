@@ -7,13 +7,11 @@
 // 7. Drawing utilities from tensorflow DONE
 // 8. Draw functions DONE
 
-// Face Mesh - https://github.com/tensorflow/tfjs-models/tree/master/facemesh
 
 import React, { useRef, useEffect, Component } from "react";
 import "./App.css";
 import * as tf from "@tensorflow/tfjs";
-// OLD MODEL
-//import * as facemesh from "@tensorflow-models/facemesh";
+
 
 // NEW MODEL
 import * as facemesh from "@tensorflow-models/face-landmarks-detection";

@@ -24,11 +24,11 @@ class App extends Component {
       <table className="table table-hover table-dark">
         <thead>
           <tr className="bg-primary">
-            <th scope="col">Name</th>
-            <th scope="col">Max student</th>
-            <th scope="col">Num of Student</th>
-            <th scope="col">Professor</th>
-            <th scope="col">Date</th>
+            <th scope="col">Név</th>
+            <th scope="col">Max. létszám</th>
+            <th scope="col">Résztvevők száma</th>
+            <th scope="col">Tanár</th>
+            <th scope="col">Dátum</th>
           </tr>
         </thead>
         <tbody>

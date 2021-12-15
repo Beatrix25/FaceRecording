@@ -72,7 +72,7 @@ app.get("/subjects", async (req, res) => {
       console.log(err);
     }
   });
-//SELECT * FROM `presence`, subject WHERE presence.subject_id = subject.id
+
 
 app.get("/presence", async (req, res) => {
     let asdasd = [];
