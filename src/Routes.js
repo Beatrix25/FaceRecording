@@ -6,7 +6,7 @@ import Tables from "./Tables/Tables";
 
 import Login from "./Login/Login";
 import history from './history';
-import About from "./FaceCounter/FaceCounter";
+import FaceCounter from "./FaceCounter/FaceCounter";
 
 export default class Routes extends Component {
     render() {
@@ -14,7 +14,7 @@ export default class Routes extends Component {
             <Router history={history}>
                 <Switch>
                     <Route path="/" exact component={Login} />
-                    <Route path="/About" component={About} />
+                    <Route path="/FaceCounter" component={FaceCounter} />
                     <Route path="/Tables" component={Tables} />
                      
                 </Switch>

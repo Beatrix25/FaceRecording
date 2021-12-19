@@ -38,7 +38,7 @@ class App extends Component {
                   <td>{presenceData.name}</td>
                   <td>{presenceData.num_of_max_student}</td>
                   <td>{presenceData.num_of_student}</td>
-                  <td>{presenceData.profesor}</td>
+                  <td>{presenceData.professor}</td>
                   <td>{presenceData.date}</td>
                 </tr>
               );

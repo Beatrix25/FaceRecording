@@ -88,11 +88,9 @@ function Product() {
       canvasRef.current.height = videoHeight;
 
       // Make Detections
-      // OLD MODEL
-      //       const face = await net.estimateFaces(video);
-      // NEW MODEL
+      
       const face = await net.estimateFaces({ input: video });
-      // console.log(face, "face");
+      
       // Get canvas context
 
       const ctx = canvasRef.current.getContext("2d");
@@ -149,6 +147,7 @@ function Product() {
           }}
         />
       </header>
+
       <Button 
         type="submit"
         onClick={sendFaces}

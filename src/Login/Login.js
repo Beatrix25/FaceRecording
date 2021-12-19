@@ -68,6 +68,7 @@ function App() {
   );
 }
 
+//database
 function LoginForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -93,7 +94,7 @@ function LoginForm() {
 
     console.log("You clicked the button");
 
-    window.open("/About", "_self");
+    window.open("/FaceCounter", "_self");
   };
   return (
     <React.Fragment>

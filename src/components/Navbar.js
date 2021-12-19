@@ -15,7 +15,7 @@ const Navigation = (props) => {
             <img src={loginImg} className="image" />{" "}
           </div>
           <a href="/">Kezdőlap</a>
-          <a href="/About">Számlálás indítása</a>
+          <a href="/FaceCounter"> Jelenlét ellenőrzés </a>
           <a href="/Tables">Jelenlét</a>
         </Nav>
         <Nav></Nav>

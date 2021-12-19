@@ -2687,7 +2687,7 @@ export const drawMesh = (predictions, ctx) => {
         ctx.fill();
       }
       ctx.font = "30px Arial";
-      ctx.fillText(`Faces: ${predictions.length}`, 10, 50);
+      ctx.fillText(`Jelenlévők: ${predictions.length}`, 10, 50);
     });
   }
   return predictions.length;
