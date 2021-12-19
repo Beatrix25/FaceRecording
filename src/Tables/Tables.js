@@ -32,7 +32,7 @@ class App extends Component {
           </tr>
         </thead>
         <tbody>
-          {  presence.map((presenceData) => {
+          { presence && presence.map((presenceData) => {
               return (
                 <tr>
                   <td>{presenceData.name}</td>
