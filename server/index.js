@@ -75,25 +75,35 @@ app.get("/subjects", async (req, res) => {
 
 
 app.get("/presence", async (req, res) => {
-    let asdasd = [];
+    let presence = [];
       try {
-          asdasd =  await db.query("SELECT * FROM `presence`, subject WHERE presence.subject_id = subject.id",
+          let subjectIDs;
+        await db.query("SELECT id FROM `subject`", (err,result)=>{
+            subjectIDs = result
+        })
+         await db.query("SELECT * FROM `presence`, subject WHERE presence.subject_id = subject.id",
                (err,result)=>{
                    if(err == "null"){
-                   console.log(err);
                   }
                   else{
-                      console.log(result)
-                      res.status(200).json({
-                          status: "succes",
-                          data: {
-                              result
-                          },
-                        });
+
+                const querrydata = Object.values(JSON.parse(JSON.stringify(result)));
+                    subjectIDs.map(subjectID =>{
+                        presence.push(querrydata.filter(data =>data.subject_id === subjectID.id))
+                    })
+    
+                    res.status(200).json({
+                        status: "succes",
+                        data: {
+                            presence
+                        },
+                      });
                   }
+                  
               }
               );
-  
+
+             
       } catch (err) {
         console.log(err);
       }

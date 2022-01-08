@@ -1,5 +1,4 @@
-import React, { useEffect, useContext,createContext, useState, useCallback , Component } from "react";
-import { useHistory } from "react-router-dom";
+import React, { Component } from "react";
 import Axios from 'axios';
 var presence =[];
 class App extends Component {
@@ -10,16 +9,23 @@ class App extends Component {
     };
   }
   componentDidMount() {
+    if(localStorage.getItem("state") === null){
+      window.location.href="/";
+    }
     Axios.get('http://localhost:3001/presence')
       .then(response => {
-      const data = response.data.data.result
+      const data = response.data.data.presence
       presence = data;
       this.setState({ data })}
       )
+
   }
 
   render (){
+ 
     return(
+      presence.map((presence2) =>{
+        return(
     <div className="list-group">
       <table className="table table-hover table-dark">
         <thead>
@@ -32,7 +38,8 @@ class App extends Component {
           </tr>
         </thead>
         <tbody>
-          { presence && presence.map((presenceData) => {
+          { presence2 && presence2.map((presenceData) => {
+         
               return (
                 <tr>
                   <td>{presenceData.name}</td>
@@ -47,6 +54,7 @@ class App extends Component {
       </table>
     </div>
     )
+  }))
 }
 };
 

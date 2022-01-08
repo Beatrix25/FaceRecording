@@ -7,6 +7,9 @@ import { useSpring, animated } from "react-spring";
 import loginImg from "./logo.png";
 
 function App() {
+  if(localStorage.getItem("state") !== null){
+    window.location.href="/FaceCounter";
+  }
   const [registrationFormStatus, setRegistartionFormStatus] = useState(false);
   const loginProps = useSpring({
     left: registrationFormStatus ? -500 : 0, // Login form sliding positions
@@ -75,15 +78,19 @@ function LoginForm() {
 
   const [loginStatus, setLoginStatus] = useState("");
   const login = () => {
+    var loggin = null
     Axios.post("http://localhost:3001/login", {
       username: username,
       password: password,
      
     }).then((response) => {
       if (response.data.message) {
-        setLoginStatus(response.data.message);
+        // setLoginStatus(response.data.message);
+        
       } else {
         setLoginStatus(response.data[0].username);
+        localStorage.setItem("state", "loggedIn");
+        window.open("/FaceCounter", "_self");
       }
       console.log(response.data);
     });
@@ -94,8 +101,6 @@ function LoginForm() {
     login();
 
     console.log("You clicked the button");
-
-    window.open("/FaceCounter", "_self");
   };
   return (
     <React.Fragment>

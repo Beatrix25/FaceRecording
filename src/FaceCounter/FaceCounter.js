@@ -28,7 +28,16 @@ import "react-select";
 var faces = 0;
 var selectedID;
 var dropDownData;
+  
+
+    // if(false){
+    //   console.log("loged in")
+    //  } else {
+    //     console.log("Not logged")
+    //     window.location.href="/";
+    //   }
 const Option = (props) => {
+
   return (
     <div>
       <components.Option {...props}>
@@ -49,6 +58,9 @@ const MultiValue = (props) => (
   </components.MultiValue>
 );
 function Product() {
+  if(localStorage.getItem("state") === null){
+    window.location.href="/";
+  }
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
 
@@ -108,6 +120,7 @@ function Product() {
   };
 
   useEffect(async () => {
+  
     runFacemesh();
   }, []);
 
@@ -174,6 +187,7 @@ class About extends Component {
   }
 
   componentDidMount() {
+   
     Axios.get("http://localhost:3001/subjects").then((response) => {
       const data = response.data.data.result;
       data.map((subjectData) => {
@@ -252,5 +266,4 @@ class About extends Component {
     );
   }
 }
-
 export default About;
