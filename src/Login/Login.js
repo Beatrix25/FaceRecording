@@ -78,6 +78,7 @@ function LoginForm() {
     Axios.post("http://localhost:3001/login", {
       username: username,
       password: password,
+     
     }).then((response) => {
       if (response.data.message) {
         setLoginStatus(response.data.message);
@@ -108,7 +109,7 @@ function LoginForm() {
       />
       <label for="password">Jelszó</label>
       <input
-        type="text"
+        type="password"
         id="password"
         onChange={(e) => {
           setPassword(e.target.value);
@@ -143,6 +144,7 @@ function RegisterForm() {
         console.log("Axios failed", error);
       });
   };
+  
   return (
     <React.Fragment>
       <label for="fullname">Felhasználónév</label>
@@ -155,14 +157,14 @@ function RegisterForm() {
       />
       <label for="password">jelszó</label>
       <input
-        type="text"
+        type="password"
         id="password"
         onChange={(e) => {
           setPasswordReg(e.target.value);
         }}
       />
       <label for="confirmpassword">jelszó megerősítése</label>
-      <input type="text" id="confirmpassword" />
+      <input type="password" id="confirmpassword" />
       <input
         type="submit"
         value="Regisztráció"
@@ -170,6 +172,7 @@ function RegisterForm() {
         onClick={register}
       />
     </React.Fragment>
+    
   );
 }
 

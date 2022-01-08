@@ -17,6 +17,7 @@ const Navigation = (props) => {
           <a href="/">Kezdőlap</a>
           <a href="/FaceCounter"> Jelenlét ellenőrzés </a>
           <a href="/Tables">Jelenlét kimutatás</a>
+          
         </Nav>
         <Nav></Nav>
       </Navbar.Collapse>
